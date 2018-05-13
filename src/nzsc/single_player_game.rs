@@ -292,7 +292,7 @@ pub fn start() {
                 println!("As a result, the computer got a point.");
             } else if points[0] == 1 && points[1] == 0 {
                 println!("As a result, you got a point.");
-            } else if points[0] == 1 && points[2] == 1 {
+            } else if points[0] == 1 && points[1] == 1 {
                 println!("As a result, each of you got a point.");
             } else {
                 panic!("Unhandled outcome: ({}, {})", points[0], points[1]);
