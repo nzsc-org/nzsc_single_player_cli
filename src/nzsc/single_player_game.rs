@@ -57,7 +57,7 @@ pub fn start() {
                 {
                     println!("You chose {} more than 3 times in a row! 3 wait penalty!", human_character);
                     let new_waits = (human.waits as i16) - 3;
-                    if (new_waits >= 0) {
+                    if new_waits >= 0 {
                         human.waits = new_waits as u8;
                     } else {
                         human.waits = 0;
@@ -94,7 +94,7 @@ pub fn start() {
             Err(()) => {
                 println!("The character \"{}\" does not exist. 4 wait penalty!", character_str.trim());
                 let new_waits = (human.waits as i16) - 4;
-                if (new_waits >= 0) {
+                if new_waits >= 0 {
                     human.waits = new_waits as u8;
                 } else {
                     human.waits = 0;
@@ -151,7 +151,7 @@ pub fn start() {
         } else {
             println!("The booster \"{}\" does not exist. 4 wait penalty!", booster_str.trim());
             let new_waits = (human.waits as i16) - 4;
-            if (new_waits >= 0) {
+            if new_waits >= 0 {
                 human.waits = new_waits as u8;
             } else {
                 human.waits = 0;
@@ -195,7 +195,7 @@ pub fn start() {
                 if human.exhausted_moves.contains(&human_move) {
                     println!("{} is single use. 4 wait penalty!", human_move);
                     let new_waits = (human.waits as i16) - 4;
-                    if (new_waits >= 0) {
+                    if new_waits >= 0 {
                         human.waits = new_waits as u8;
                     } else {
                         human.waits = 0;
@@ -208,7 +208,7 @@ pub fn start() {
                 {
                     println!("You have played {} for the last 3 turns. You cannot play it a 4th time in a row. 3 wait penalty!", human_move);
                     let new_waits = (human.waits as i16) - 3;
-                    if (new_waits >= 0) {
+                    if new_waits >= 0 {
                         human.waits = new_waits as u8;
                     } else {
                         human.waits = 0;
@@ -228,7 +228,7 @@ pub fn start() {
                     if human_character_booster_moves.contains(&human_move) {
                         println!("The move {} is from another booster. 2 wait penalty!", human_move);
                         let new_waits = (human.waits as i16) - 2;
-                        if (new_waits >= 0) {
+                        if new_waits >= 0 {
                             human.waits = new_waits as u8;
                         } else {
                             human.waits = 0;
@@ -239,7 +239,7 @@ pub fn start() {
                     } else {
                         println!("The move {} is from another character. 3 wait penalty!", human_move);
                         let new_waits = (human.waits as i16) - 3;
-                        if (new_waits >= 0) {
+                        if new_waits >= 0 {
                             human.waits = new_waits as u8;
                         } else {
                             human.waits = 0;
@@ -332,7 +332,7 @@ pub fn start() {
         } else {
             println!("The move \"{}\" does not exist. 4 wait penalty!", move_str.trim());
             let new_waits = (human.waits as i16) - 4;
-            if (new_waits >= 0) {
+            if new_waits >= 0 {
                 human.waits = new_waits as u8;
             } else {
                 human.waits = 0;

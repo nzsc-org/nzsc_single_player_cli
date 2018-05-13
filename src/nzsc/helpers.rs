@@ -5,7 +5,7 @@ pub fn lowercase_no_whitespace(s: &str) -> String {
     for &byte in bytes.iter() {
         let c = byte as char;
 
-        if (!c.is_whitespace()) {
+        if !c.is_whitespace() {
             s.push(c);
         }
     }
