@@ -280,7 +280,30 @@ pub fn start() {
             human.move_streak.update(human_move);
             computer.move_streak.update(computer_move);
 
-            let points = outcomes::get_points(vec![human_move, computer_move]);
+            let mut points = outcomes::get_points(vec![human_move, computer_move]);
+
+            // Handle Shadow Fireball vs. Smash special case.
+            // If the Samurai is Strong Samurai, then Smash wins.
+            // Else, Shadow Fireball wins.
+            if human_move == Move::ShadowFireball && computer_move == Move::Smash {
+                if computer.booster == Booster::Strong {
+                    points[0] = 0;
+                    points[1] = 1;
+                } else {
+                    points[0] = 1;
+                    points[1] = 0;
+                }
+            }
+            if computer_move == Move::ShadowFireball && human_move == Move::Smash {
+                if human.booster == Booster::Strong {
+                    points[0] = 1;
+                    points[1] = 0;
+                } else {
+                    points[0] = 0;
+                    points[1] = 1;
+                }
+            }
+
             human.points += points[0];
             computer.points += points[1];
 
