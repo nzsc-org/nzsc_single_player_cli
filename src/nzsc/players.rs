@@ -58,4 +58,24 @@ impl Player {
             move_streak: MoveStreak::new()
         }
     }
+
+    pub fn get_available_moves(&self) -> Vec<Move> {
+        let character_moves = self.character.get_moves();
+        let booster_moves = self.booster.get_moves();
+
+        let mut available_moves = character_moves;
+        available_moves.extend(booster_moves);
+
+        let exhausted_moves = &self.exhausted_moves;
+
+        available_moves.retain(|&a| !exhausted_moves.contains(&a));
+
+        if let Some(streak_move) = self.move_streak.repeated_move {
+            if self.move_streak.times >= 3 {
+                available_moves.retain(|&a| a != streak_move);
+            }
+        }
+
+        available_moves
+    }
 }
