@@ -6,17 +6,17 @@ use super::boosters::Booster;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Character {
-    Ninja,
-    Zombie,
-    Samurai,
-    Clown
+    Ninja = 0,
+    Zombie = 1,
+    Samurai = 2,
+    Clown = 3
 }
 
 impl Character {
     pub fn to_u8(self) -> u8 {
         self as u8
     }
-    
+
     pub fn get_moves(self) -> Vec<Move> {
         match self {
             Character::Ninja => vec![

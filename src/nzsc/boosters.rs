@@ -69,7 +69,7 @@ impl FromStr for Booster {
             "strong" => Ok(Booster::Strong),
             "backwards" => Ok(Booster::Backwards),
             "moustachio" => Ok(Booster::Moustachio),
-            "none" => Ok(Booster::None),
+            "none" | "nobooster" => Ok(Booster::None),
             _ => Err(())
         }
     }
