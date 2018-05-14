@@ -29,3 +29,9 @@
 |Nose of the Taunted| |1|0|0|0|0|0|1|1|1|0|1|0|1|1|0|0|1|1|1|1|1|0|0|0|0|0|0|0|
 |Mustache Mash| |0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|
 |Big Hairy Deal| |0|1|1|1|0|0|0|1|1|0|1|0|0|0|1|0|0|1|0|0|0|0|0|0|0|0|0|0|
+
+## How to read this table:
+To answer the question "How many points does {x} get against {y}?" find appropriate column and row corresponding to the x and y, and the value of that table cell will be the answer to your question.
+
+### Special case: `Smash` vs. `Shadow Fireball`
+There is one special case that this table does not cover: `Smash` vs. `Shadow Fireball`. If the Samurai is Strong, then `Smash` wins. Else, `Shadow Fireball` wins.
