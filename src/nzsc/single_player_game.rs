@@ -25,6 +25,21 @@ fn rand_int_incl(min: u8, max_incl: u8) -> u8 {
     rand::thread_rng().gen_range(min, max_incl + 1)
 }
 
+fn get_victory_term_by_loser_points(loser_points: u8) -> String {
+    let victory_margin = 5 - loser_points;
+
+    match victory_margin {
+        1 => "Clinch".to_string(),
+        2 => "Hypnotization".to_string(),
+        3 => "Obliteration".to_string(),
+        4 => "Annihilation".to_string(),
+        5 => "Wipeout".to_string(),
+        _ => {
+            panic!("Impossible game result 5?-{}", loser_points);
+        }
+    }
+}
+
 pub fn start() {
     let mut human = players::CharacterlessPlayer::new();
     let mut computer = players::CharacterlessPlayer::new();
@@ -106,10 +121,10 @@ pub fn start() {
     }
 
     if computer.points >= 5 {
-        println!("The computer won {} - {}.", human.points, computer.points);
+        println!("The computer won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(human.points));
         return;
     } else if human.points >= 5{
-        println!("You won {} - {}.", human.points, computer.points);
+        println!("You won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(computer.points));
         return;
     }
 

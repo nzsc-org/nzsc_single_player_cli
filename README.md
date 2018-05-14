@@ -242,6 +242,12 @@ Congratulations! You now know how to play NZSC!
  - _single-use move_: a move that destroys itself
  - _destroy [a player's move]_: revoke that player's right to use that move for the rest of the game
  - _NZSC_: the name of the game. If you haven't already guessed, it is an acronym for "Ninja Zombie Samurai Clown," the characters of the game.
+ - _margin_: how much you win by. You can describe this numerically (1, 2, 3, 4, 5) or with NZSC slang (Clinch, Hypnotization, Obliteration, Annihilation, Wipeout).
+ - _Wipeout_: 5-0 victory
+ - _Annihilation_: 5-1 victory
+ - _Obliteration_: 5-2 victory
+ - _Hypnotization_: 5-3 victory
+ - _Clinch_: 5-4 victory
 
 ##### 4.2 FAQ
  - Q: Why are they called "waits"? A: Back in elementary school, my friend and I would impose limits on how long you could take to pick a move. If you wanted extra time to think, you could say "wait" to use one of your four waits, and get a time extension. As the game developed, waits became a sort of currency that could be bartered with and also deducted from as a penalty, but the name stuck, despite the wait's new role in NZSC.
