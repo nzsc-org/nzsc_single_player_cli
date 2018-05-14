@@ -177,10 +177,10 @@ pub fn start() {
     }
 
     if computer.points >= 5 {
-        println!("The computer won {} - {}.", human.points, computer.points);
+        println!("The computer won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(human.points));
         return;
     } else if human.points >= 5{
-        println!("You won {} - {}.", human.points, computer.points);
+        println!("You won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(computer.points));
         return;
     }
 
@@ -358,11 +358,11 @@ pub fn start() {
     }
 
     println!();
-    if computer.points > human.points {
-        println!("The computer won {} - {}.", human.points, computer.points);
+    if computer.points >= 5 {
+        println!("The computer won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(human.points));
         return;
-    } else {
-        println!("You won {} - {}.", human.points, computer.points);
+    } else if human.points >= 5{
+        println!("You won {} - {} ({}).", human.points, computer.points, get_victory_term_by_loser_points(computer.points));
         return;
     }
 }
