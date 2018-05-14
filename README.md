@@ -211,7 +211,7 @@ If the move is from the offender's character's other booster (e.g., a `Speedy Ni
 If none of the the above clauses are applied, the offender will lose 3 waits.
 
 ##### 3.5 Determining Who Scores a Point
-Every move scores a certain number of points against another move. To determine that number, consult the table at [OUTCOME_TABLE.md](../blob/master/OUTCOME_TABLE.md). For each player, find their move on the x-axis, and their opponent's move on the y-axis. Award the player points equal to the number in that table cell. This will be tedious at first, but if you play enough, you will memorize the outcome of every pair of moves, so you won't have to consult the table. There are 784 (28^2) outcomes, so this will take some time to master.
+Every move scores a certain number of points against another move. To determine that number, consult the table at [OUTCOME_TABLE.md](https://github.com/kylejlin/nzsc_single_player/blob/master/OUTCOME_TABLE.md). For each player, find their move on the x-axis, and their opponent's move on the y-axis. Award the player points equal to the number in that table cell. This will be tedious at first, but if you play enough, you will memorize the outcome of every pair of moves, so you won't have to consult the table. There are 784 (28^2) outcomes, so this will take some time to master.
 
 If you find this intimidating, consider this simplified example from rock-paper-scissors:
 
