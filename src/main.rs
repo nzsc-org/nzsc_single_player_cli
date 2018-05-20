@@ -1,4 +1,5 @@
-mod nzsc;
+extern crate nzsc_single_player;
+use nzsc_single_player as nzsc;
 
 use std::io;
 
