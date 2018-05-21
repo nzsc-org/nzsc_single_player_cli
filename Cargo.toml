@@ -1,5 +1,5 @@
 [package]
-name = "nzsc_single_player"
+name = "nzsc_single_player_cli"
 version = "0.2.0"
 authors = ["Kyle Lin <kylejlin.us@gmail.com>"]
 
