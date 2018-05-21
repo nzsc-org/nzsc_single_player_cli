@@ -1,10 +1,10 @@
-# nzsc_single_player
-A complete implementation of NZSC written in Rust that can be played on the command line.
+# nzsc_single_player_cli
+A wrapper for [nzsc_single_player](https://github.com/kylejlin/nzsc_single_player) that allows you to play against the computer on the command line.
 
 ## TL;DR
 ```bash
-git clone https://github.com/kylejlin/nzsc_single_player.git
-cd nzsc_single_player/
+git clone https://github.com/kylejlin/nzsc_single_player_cli.git
+cd nzsc_single_player_cli/
 cargo run
 ```
 
