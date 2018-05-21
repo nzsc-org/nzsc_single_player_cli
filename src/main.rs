@@ -1,11 +1,11 @@
-extern crate nzsc_single_player_cli;
-use nzsc_single_player_cli::command_line_app::CommandLineApp;
+extern crate nzsc_single_player;
+use nzsc_single_player::command_line_app::CommandLineApp;
 
 use std::io;
 
 fn main() {
     loop {
-        let mut game = nzsc_single_player_cli::single_player_game::SinglePlayerNZSCGame::new();
+        let mut game = nzsc_single_player::single_player_game::SinglePlayerNZSCGame::new();
         let mut response = String::new();
         let initial_prompt = game.initial_prompt();
         println!("{}", initial_prompt);

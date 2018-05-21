@@ -8,4 +8,4 @@ repository = "https://github.com/kylejlin/nzsc_single_player_cli"
 license = "MIT"
 
 [dependencies]
-rand = "0.3.14"
+nzsc_single_player = "0.1.0"
