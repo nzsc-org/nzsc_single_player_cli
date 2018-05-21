@@ -6,62 +6,42 @@ use super::streaks::{
     CharacterStreak
 };
 
-pub struct CharacterlessPlayer {
-    pub points: u8,
-    pub waits: u8,
-    pub character_streak: CharacterStreak
-}
-
-pub struct BoosterlessPlayer {
-    pub points: u8,
-    pub waits: u8,
-    pub character: Character
-}
-
 pub struct Player {
-    pub points: u8,
     pub waits: u8,
-    pub character: Character,
-    pub booster: Booster,
+    pub points: u8,
+    pub character: Option<Character>,
+    pub booster: Option<Booster>,
+    pub character_streak: CharacterStreak,
+    pub move_streak: MoveStreak,
     pub exhausted_moves: Vec<Move>,
-    pub move_streak: MoveStreak
-}
-
-impl CharacterlessPlayer {
-    pub fn new() -> Self {
-        Self {
-            points: 0,
-            waits: 4,
-            character_streak: CharacterStreak::new()
-        }
-    }
-}
-
-impl BoosterlessPlayer {
-    pub fn new(characterless_player: CharacterlessPlayer, character: Character) -> Self {
-        Self {
-            points: characterless_player.points,
-            waits: characterless_player.waits,
-            character
-        }
-    }
 }
 
 impl Player {
-    pub fn new(boosterless_player: BoosterlessPlayer, booster: Booster) -> Self {
-        Self {
-            points: boosterless_player.points,
-            waits: boosterless_player.waits,
-            character: boosterless_player.character,
-            booster,
-            exhausted_moves: Vec::new(),
-            move_streak: MoveStreak::new()
+    pub fn new() -> Player {
+        Player {
+            waits: 4,
+            points: 0,
+            character: None,
+            booster: None,
+            character_streak: CharacterStreak::new(),
+            move_streak: MoveStreak::new(),
+            exhausted_moves: vec![],
         }
     }
 
-    pub fn get_available_moves(&self) -> Vec<Move> {
-        let character_moves = self.character.get_moves();
-        let booster_moves = self.booster.get_moves();
+    pub fn penalize_waits(&mut self, waits: u8) -> u8 {
+        if self.waits < waits {
+            self.waits = 0;
+            return 1;
+        } else {
+            self.waits -= waits;
+            return 0;
+        }
+    }
+
+    pub fn available_moves(&self) -> Vec<Move> {
+        let character_moves = self.character.expect("Player.available_moves() has been called before Player has chosen a character!").get_moves();
+        let booster_moves = self.booster.expect("Player.available_moves() has been called before Player has chosen a booster!").get_moves();
 
         let mut available_moves = character_moves;
         available_moves.extend(booster_moves);
