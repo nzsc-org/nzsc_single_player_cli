@@ -1,11 +1,15 @@
 extern crate nzsc_single_player;
 use nzsc_single_player::command_line_app::CommandLineApp;
 
+extern crate rand;
+use rand::Rng;
+
 use std::io;
 
 fn main() {
     loop {
-        let mut game = nzsc_single_player::single_player_game::SinglePlayerNZSCGame::new();
+        let random_seed = rand::thread_rng().gen_range(1, 2147483647);
+        let mut game = nzsc_single_player::single_player_game::SinglePlayerNZSCGame::new(random_seed);
         let mut response = String::new();
         let initial_prompt = game.initial_prompt();
         println!("{}", initial_prompt);
