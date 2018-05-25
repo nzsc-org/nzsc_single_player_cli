@@ -216,7 +216,7 @@ Every move scores a certain number of points against another move. To determine 
 If you find this intimidating, consider this simplified example from rock-paper-scissors:
 
 |  | x: | Rock | Paper | Scissors |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | y: | | | | |
 | Rock | | 0 | 1 | 0 |
 | Paper | | 0 | 0 | 1 |
