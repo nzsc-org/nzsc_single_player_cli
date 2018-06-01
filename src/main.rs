@@ -17,7 +17,7 @@ use rand::Rng;
 
 fn main() {
     loop {
-        let random_seed = rand::thread_rng()::gen_range(1, 4294967296);
+        let random_seed = rand::thread_rng().gen_range(1, 4294967296);
         let mut game = nzsc_single_player::single_player_game::SinglePlayerNZSCGame::new(random_seed);
         let mut response = String::new();
         let initial_output = game.initial_output();
