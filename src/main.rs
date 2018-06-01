@@ -101,7 +101,9 @@ fn main() {
         io::stdin().read_line(&mut response)
             .expect("Failed to read line.");
 
-        if response.trim().to_lowercase().chars().next().unwrap() != 'y' {
+        if response == ""
+            || response.trim().to_lowercase().chars().next().unwrap() != 'y'
+        {
             break;
         } else {
             print!("\n");
