@@ -4,6 +4,9 @@ extern crate nzsc_single_player_text_interface;
 use std::io;
 use std::str::FromStr;
 
+extern crate rand;
+use rand::Rng;
+
 // A note about print! vs println!:
 //
 // There are a lot of \n and \n\n in the following code.
@@ -14,7 +17,7 @@ use std::str::FromStr;
 
 fn main() {
     loop {
-        let random_seed = 0xbada55; // TODO randomness
+        let random_seed = rand::thread_rng()::gen_range(1, 4294967296);
         let mut game = nzsc_single_player::single_player_game::SinglePlayerNZSCGame::new(random_seed);
         let mut response = String::new();
         let initial_output = game.initial_output();
