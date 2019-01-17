@@ -29,7 +29,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "nzsc_single_player_cli"
-version = "0.5.2"
+version = "0.5.3"
 dependencies = [
  "nzsc_single_player 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "nzsc_single_player_text_interface 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
